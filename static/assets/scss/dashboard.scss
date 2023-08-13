@@ -1,0 +1,50 @@
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/helpers';
+@import 'components/bootstarp-icons';
+@import 'components/main/header';
+@import 'components/main/sidebar';
+
+// dashboard Page Starts 
+body {
+    overflow: hidden;
+}
+.content {
+    min-height: 100vh;
+    background-color: $bodybgcolor;
+    padding-bottom: 0px;
+    padding-left: 300px;
+    @include mqMx(medium){
+        padding-left: 0px;
+    }
+    .dasboard-content {
+        width: calc(100% - 300px);
+        overflow: auto;
+        max-height: 100vh;
+        position: fixed;
+        right: 0px;
+        padding: 0px;
+        transition: .5s;
+        @include mqMx(medium){
+            width: 100%;
+        }
+        &.open {
+            width: 100%;
+        }
+        &::-webkit-scrollbar {
+            width: 12px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #e8e8e8;
+        }  
+        &::-webkit-scrollbar-thumb {
+            background-color: #bebebe;
+            border-radius: 20px;
+            border: 3px solid #e8e8e8;
+        }
+        .dashboard-content-container {
+            padding: 30px 30px;
+        }
+    }
+}
+// dashboard Page Ends 

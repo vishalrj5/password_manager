@@ -1,0 +1,44 @@
+@font-face {
+    font-family: 'Inter', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+}
+$fontStack: 'Inter', sans-serif;
+$headFont: 'Inter', sans-serif;
+$systemFont: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+$rootFontSize: 62.5%;
+$baseFontSize: 14px;
+$largeFontSize: 32px;
+
+$primaryColor: #006cb8;
+$primaryHoverColor: #00518b;
+$secondaryColor: #003a65;
+$secondaryHoverColor: #00467a;
+$whiteColor: white;
+$bodybgcolor: #ecf1fb;
+$headerborder: #d6dfe0;
+$caretColor: #86999c;
+$mainTextColor: #435179;
+$borderColor: #d9e1e7;
+$checkboxBorder: #959e9f;
+$dangerColor: #e94346;
+$successColor: #009969;
+$lightGrey: #bdc3ca;
+
+
+$blackColor: #1f1f1f;
+$textColor : #7e8084;
+$textLight: #777676;
+$greyColor: #f3f6f7;
+$footerColor: #081D25;
+$footertextColor: #3f5b64;
+$inputBorder: #ebebeb;
+$darkerBlue: #0f0f35;
+$inputBg: #f8f8f8;
+$darkerBlack: #212529;
+$footer-color : #898989;
+
+//Vars
+$bootstrapiconPath : "../fonts/";
+$imgPath : "../images/";
+$stylePath : "../scss/";

@@ -1,0 +1,76 @@
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/helpers';
+@import 'components/bootstarp-icons';
+
+// Login Page Starts 
+.content {
+    min-height: 100vh;
+    background-color: $bodybgcolor;
+    padding-bottom: 0px;
+    background-image: url('#{$imgPath}paris.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.login-page {
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 100px 0px;
+    @include mqMx(mobile){
+        padding: 40px 0px;
+    }
+    img {
+        &.logo {
+            margin-bottom: 20px;
+        }
+    }
+    .login-block {
+        flex-direction: column;
+        width: 420px;
+        padding: 20px;
+        background-color: #00000063;
+        border: 1px solid #a7a7a726;
+        border-radius: 10px;
+        @include mqMx(mobile){
+            width: 100%;
+        }
+        @include mqMx(tiny){
+            padding: 10px;
+        }
+    }
+    a {
+        &.link {
+            color: $whiteColor;
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+    .login-txt-block {
+        align-items: center;
+        h2 {
+            color: $whiteColor;
+            font-size: $largeFontSize + 3px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            @include mqMx(largemobile){
+                font-size: $largeFontSize - 5px;
+                margin-bottom: 10px;
+            }
+        }
+        h4 {
+            color: $whiteColor;
+            font-size: $baseFontSize + 6px;
+            margin-bottom: 0px;
+            line-height: 28px;
+            @include mqMx(largemobile){
+                font-size: $baseFontSize + 2px;
+                line-height: 24px;
+            }
+        }
+    }
+}
+// Login Page Ends 

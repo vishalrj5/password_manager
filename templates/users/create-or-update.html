@@ -1,0 +1,85 @@
+{% extends 'layouts/apps.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'assets/css/custom.css' %}?time={% now 'h:i:s' %}">
+<div class="dashboard-content-container fullWidth">
+
+    <div class="overview-section fullWidth">
+        <h2 class="heading button-heading mt-1 mb-4">
+            <span>{{action}} Users</span>
+        </h2>
+    </div>
+
+    <form id="__create_or_update_users_form" onSubmit="onValidate()" method="POST" action="{% url 'users:users.create' %}">
+        {% csrf_token %}
+        <div class="form-section dFlex mb-4 clearfix">
+            <div class="form-row dFlex ">
+                <div class="col-12 column-common dFlex">
+                    <h3>User Details</h3>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 column-common column-input dFlex">
+                    <label for="" class="label-title">Email</label>
+                    <input type="email" placeholder="Email" name="email" value="{{users.email}}" required />
+                    {% comment %} <span class="error-msg">This field is required</span> {% endcomment %}
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 column-common column-input dFlex">
+                    <label for="" class="label-title">Username</label>
+                    <input type="text" placeholder="Username" value="{{users.username}}" name="username" required />
+                </div>
+            </div>
+
+            <div class="form-row dFlex ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 column-common column-input dFlex">
+                    <label for="" class="label-title">First Name</label>
+                    <input type="text" placeholder="First Name" value="{{users.first_name}}" name="first_name" required />
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 column-common column-input dFlex">
+                    <label for="" class="label-title">Last Name</label>
+                    <input type="text" placeholder="Last Name" value="{{users.last_name}}" name="last_name" required />
+                </div>
+            </div>
+
+
+            <div class="form-row dFlex ">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 column-common column-input dFlex">
+                    <label for="" class="label-title">Phone</label>
+                    <input type="text" placeholder="Phone" value="{{users.phone}}" name="phone" required />
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 column-common column-select dFlex">
+                    <label for="" class="label-title">Gender </label>
+                    <select name="gender" >
+                        {% for value in gender %}
+                            
+                            {% if users.gender %}
+                                {% if users.gender == value.0 %}
+                                    <option value="{{value.0}}" selected>{{value.1}}</option>
+                                {% else %}
+                                    <option value="{{value.0}}" >{{value.1}}</option>
+                                {% endif %}
+                            {% else %}
+                                <option value="{{value.0}}" >{{value.1}}</option>
+                            {% endif %}
+                                
+                            
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+
+
+            <input type="hidden" name="user_id" value="{{users.id}}" />
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+
+
+
+{% block script %}
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.js?time={% now 'h:i:s' %}"> </script>
+    <script src="{% static 'assets/js/module/users/create-or-update.js' %}?time={% now 'h:i:s' %}"></script>
+{% endblock script %}
+    

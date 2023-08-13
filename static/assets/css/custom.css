@@ -1,0 +1,10 @@
+#_sign_in_form > label{
+    color: crimson !important;
+}
+
+
+
+.validation-error{
+    padding-top: 5px !important;
+    color: crimson !important;
+}

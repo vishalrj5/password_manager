@@ -1,0 +1,331 @@
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/helpers';
+@import 'components/bootstarp-icons';
+@import 'components/main/header';
+@import 'components/main/footer';
+
+
+body{
+    height: 100vh;
+    background-color: $bodybgcolor;
+}
+
+
+.menulistwrap{
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: $whiteColor;
+    .progress{
+        margin: 0 20px;
+        .progress-bar{
+            background-color: $primaryColor;
+        }
+    }
+    .progress-text{
+        display: inline-block;
+        margin-left: 20px;
+        margin-bottom: 5px;
+        font-size: 12px;
+    }
+    hr{
+        margin: 20px;
+        margin-top: 15px;
+    }
+    .menu-list{
+        margin-top: 12px;
+        list-style: none;
+        padding-left: 0px;
+        li{
+            display: inline-block;
+            margin-right: 6px;
+            &:last-child {
+                margin-right: 0px;
+            }
+            a{
+                padding: 10px 20px;
+                color: $whiteColor;
+                background-color:$whiteColor;
+                border: 1px solid $borderColor;
+                border-radius: 10px;
+                color: $mainTextColor;
+                &:hover,
+                &:focus,
+                &:active{
+                    background-color: $primaryColor;
+                    border: 1px solid $primaryColor;
+                    color: $whiteColor;
+                }
+            }
+        }
+    }
+    &.menulistwrap-form-filter {
+        margin-top: 0px;
+        .menu-list{
+            margin: 0px;
+            display: flex;
+            li{
+                display: inline-block;
+                margin-right: 6px;
+                flex: 1 1 100%;
+                &:last-child {
+                    margin-right: 0px;
+                }
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    border: 1px solid $primaryColor;
+                    &:hover {
+                        border: 1px solid $primaryHoverColor;
+                    }
+                    &.active {
+                        background-color: $whiteColor;
+                        color: $primaryColor;
+                        border: 1px solid $primaryColor;
+                        &:hover {
+                            color: $whiteColor;
+                            background-color: $primaryHoverColor;
+                            border: 1px solid $primaryHoverColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.menulistwrap-user-info {
+        margin-top: 0px;
+        .menu-list{
+            margin: 0px;
+            display: flex;
+            flex-direction: column;
+            li{
+                display: inline-block;
+                margin-right: 0px;
+                flex: 1 1 100%;
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                    background-color: $whiteColor;
+                    color: $primaryColor;
+                    border: 1px solid $primaryColor;
+                    &:hover {
+                        background-color: $primaryColor;
+                        border: 1px solid $primaryColor;
+                        color: $whiteColor;
+                    }
+                    &.active {
+                        background-color: $primaryColor;
+                        border: 1px solid $primaryColor;
+                        color: $whiteColor;
+                        &:hover {
+                            color: $whiteColor;
+                            background-color: $primaryHoverColor;
+                            border: 1px solid $primaryHoverColor;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.form-filter-search {
+    padding: 15px 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: $whiteColor;
+    .form-group{
+        &.size-big{
+            width: 100%;
+        }
+        .input-group{
+            height: 40px;
+        }
+        .input-group-text{
+            padding: 0 15px;
+            border-radius: 0;
+            background-color: $whiteColor;
+            border: 1px solid $borderColor;
+            border-left: none;
+            transition: 0.3s all ease-in-out;
+            border-radius: 10px;
+            .bi-search{
+                font-size: 14px;
+                color: $mainTextColor;
+            }
+            &:hover,
+            &:focus,
+            &:active{
+                
+            }
+        }
+        .form-control{
+            position: relative;
+            float: left;
+            margin-bottom: 0;
+            padding-right: 0px;
+            padding-left: 15px;
+            width: 100%;
+            font-size: $baseFontSize - 1px;
+            font-weight: 300;
+            border-right: 0;
+            z-index: 2;
+            border-radius: 10px;
+            box-shadow: none;
+            outline: none;
+            &:hover, &:focus {
+                outline: none;
+                box-shadow: none;
+                border-color: $borderColor;
+            }
+        }
+    }
+}
+
+.recent-entries-wrap{
+    padding: 0;
+    .recent-entries-list{
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px 15px;
+        border: 1px solid $headerborder;
+        background-color: $whiteColor;
+        transition: 0.3s all ease-in-out;
+        .options-wrap{
+            display: none;
+            position: absolute;
+            right: 10px;
+            top: 24px;
+        }
+        &:hover{
+            .options-wrap{
+                display: block;
+                -webkit-animation: fadeIn 1s;
+                animation: fadeIn 1s;
+            }
+        }
+        .column-checkbox {
+            ul {
+                li {
+                    margin-bottom: 0px;
+                }
+            }
+        }
+    }
+    .user-img-wrap{
+        float: left;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $headerborder;
+        border-radius: 50px;
+        overflow: hidden;
+        img {
+            height: 100%;
+        }
+    }
+    .recent-content{
+        width: calc(100% - 50px);
+        padding-left: 10px;
+        h3{
+            margin: 0px 0 0 0px;
+            color: $mainTextColor;
+        }
+        p{
+            margin-top: 1px;
+            font-size: 14px;
+            margin-bottom: 0px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: calc(100% - 240px);
+        }
+    }
+}
+
+
+.btn{
+    margin-right: 5px;
+    width: 70px;
+    height: 25px;
+    font-size: 12px;
+    line-height: 14px;
+    border-radius: 2px;
+    transition: 0.3s all ease-in-out;
+}
+.btn-primary{
+    color: $whiteColor;
+    background-color: $primaryColor;
+    border-color: $primaryColor;
+    &:hover,
+    &:focus,
+    &:focus{
+        background-color: $primaryHoverColor;
+        border-color: $primaryHoverColor;
+    }
+}
+.btn-secondary{
+    color: $primaryColor;
+    background-color: $whiteColor;
+    border-color: $primaryColor;
+    &:hover,
+    &:focus,
+    &:focus{
+        color: $whiteColor;
+        background-color: $primaryColor;
+        border-color: $primaryColor;
+    }
+}
+.btn-verified{
+    color: #238693;
+    border-color: rgba(0, 0, 0, 0.05);
+    background-color: #e7f6f9;
+    &:hover,
+    &:focus,
+    &:focus{
+        color: $whiteColor;
+        background-color: $primaryColor;
+    }
+}
+
+
+@-webkit-keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+// Form Section Starts
+.form-section {
+    padding: 15px;
+    background-color: $whiteColor;
+    flex-direction: column;
+    .form-row {
+        flex-wrap: wrap;
+    }
+}
+// Form Section Ends
+
+// User Info Page Starts
+.user-info-block {
+    justify-content: space-between;
+    .user-document-block {
+        width: 250px;
+    }
+    .user-recent-entries {
+        width: calc(100% - 280px);
+    }
+}
+// User Info Page Ends
+
+// User Form Page Ends

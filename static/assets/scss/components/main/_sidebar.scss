@@ -1,0 +1,132 @@
+@import '../../base/mixins';
+@import '../../base/variables';
+
+.dasboard-sidebar {
+    z-index: 2;
+    width: 300px;
+    min-height: 100vh;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    @include mqMx(medium){
+        width: 280px;
+        left: -280px;
+        padding-right: 40px;
+    }
+    &.open {
+        left: -300px;
+        @include mqMx(medium){
+            left: 0px;
+        }
+    }
+    .sidebar-container {
+        background-color: $secondaryColor;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+    }
+    .logo {
+        width: 100%;
+        padding: 20px 0px;
+        text-align: center;
+    }
+    .menu {
+        width: 100%;
+        height: calc(100vh - 149px);
+        overflow: auto;
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #ecf1fb;
+            border-radius: 20px;
+        }  
+        &::-webkit-scrollbar-thumb {
+            background-color: #e3e3e3;
+            border-radius: 20px;
+            border: 3px solid $whiteColor;
+        }
+        ul {
+            padding-left: 0px;
+            margin-bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            li {
+                width: 100%;
+                list-style: none;
+                border-bottom: 1px solid $secondaryHoverColor;
+                &:first-child {
+                    border-top: 1px solid $secondaryHoverColor;
+                }
+                a {
+                    display: inline-block;
+                    width: 100%;
+                    padding: 0px 15px;
+                    line-height: 50px;
+                    color: $whiteColor;
+                    @include mqMx(medium){
+                        line-height: 45px;
+                    }
+                    img {
+                        height: 20px;
+                        margin-right: 15px;
+                        filter: brightness(0) invert(1);
+                        @include mqMx(medium){
+                            height: 18px;
+                        }
+                    }
+                    &.active {
+                        background-color: $secondaryHoverColor;
+                        color: $whiteColor;
+                    }
+                    &:hover {
+                        background-color: $secondaryHoverColor;
+                        color: $whiteColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Mobile Menu Starts
+.menu-switch-mobile {
+    position: absolute;
+    right: 0px;
+    top: 18px;
+    padding: 0px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 2;
+    display: none;
+    opacity: 1;
+    background-color: $secondaryColor;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    @include mqMx(medium){
+        display: block;
+    }
+    i {
+        color: $whiteColor;
+        font-size: $baseFontSize + 10px;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    &.open {
+        opacity: 0;
+    }
+}
+// Mobile Menu Ends

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="http://brandio.io/envato/iofrm/html/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://brandio.io/envato/iofrm/html/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="http://brandio.io/envato/iofrm/html/css/iofrm-style.css">
+    <link rel="stylesheet" type="text/css" href="http://brandio.io/envato/iofrm/html/css/iofrm-theme19.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/custom.css' %}?time={% now 'h:i:s' %}">
+
+
+</head>
+<body>
+    <div class="form-body without-side">
+       
+        {% block content %}{% endblock content %}
+    </div>
+
+<script src="http://brandio.io/envato/iofrm/html/js/jquery.min.js?time={% now 'h:i:s' %}"></script>
+<script src="http://brandio.io/envato/iofrm/html/js/popper.min.js?time={% now 'h:i:s' %}"></script>
+<script src="http://brandio.io/envato/iofrm/html/js/bootstrap.min.js?time={% now 'h:i:s' %}"></script>
+<script src="http://brandio.io/envato/iofrm/html/js/main.js?time={% now 'h:i:s' %}"></script>
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    $.ajaxSetup({
+        data: {
+            'csrfmiddlewaretoken': '{{ csrf_token }}'
+        }
+    });
+</script>
+
+{% block script %}{% endblock script %}
+</body>
+</html>

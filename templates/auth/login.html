@@ -1,0 +1,61 @@
+{% extends 'layouts/guest.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+<div class="row">
+    <div class="img-holder">
+        <div class="bg"></div>
+        <div class="info-holder">
+            <img src="http://brandio.io/envato/iofrm/html/images/graphic3.svg" alt="">
+        </div>
+    </div>
+    <div class="form-holder">
+        <div class="form-content">
+            <div class="form-items">
+                <h3>Login to account</h3>
+
+                <form id="_sign_in_form" data-redirect-url="{% url 'home:dashboard' %}" >
+                    <input class="form-control" type="text" id="login-username" name="username" placeholder="E-mail Address" >
+                    <input class="form-control" type="password" id="login-password" name="password" placeholder="Password" >
+                    <div class="form-button">
+                        <button id="_sign_in_submit" type="button" class="ibtn">Login</button> 
+                        <a href="">Forget password?</a>
+                    </div>
+                </form>
+                <div class="other-links">
+                    <div class="text">Or login with</div>
+                    <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a><a href="#"><i class="fab fa-google"></i>Google</a><a href="#"><i class="fab fa-linkedin-in"></i>Linkedin</a>
+                </div>
+                <div class="page-links">
+                    <a href="">Register new account</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+
+{% block script %}
+
+
+
+<script>
+    var api_config= {
+        'login_url' : "{% url 'authentication:login' %}",
+        'csrfmiddlewaretoken' : '{{ csrf_token }}',
+    };
+</script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.js?time={% now 'h:i:s' %}"> </script>
+<script src="{% static 'assets/custom/js/guest/login.js' %}?time={% now 'h:i:s' %}"></script>
+
+
+
+{% endblock script %}

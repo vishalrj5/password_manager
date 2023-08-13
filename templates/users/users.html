@@ -1,0 +1,53 @@
+{% extends 'layouts/apps.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="dashboard-content-container fullWidth">
+    <div class="overview-section fullWidth">
+      <h2 class="heading button-heading mt-1 mb-4">
+        <span>Users List</span>
+        <a href="{% url 'users:users.create' %}" class="link btn btn-primary">Create</a>
+      </h2>
+    </div>
+
+
+    <div class="recent-order-section fullWidth">
+        <div class="recent-table table-striped table-borderless table-responsive">
+          <table class="table" id="users-datatable">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Image</th>
+                <th scope="col">Email</th>
+                <th scope="col">Fisrt Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+{% endblock content %}
+
+
+
+{% block script %}
+    <script>
+        var api_config= {
+            'datatable' : "{% url 'users:load.users.datatable' %}",
+            'csrfmiddlewaretoken' : '{{ csrf_token }}',
+            'delete_records' : "{% url 'users:users.records.destroy' %}",
+            'edit_url' : "{% url 'users:users.update' '0' %}",
+        };
+    </script>
+    <script src="{% static 'assets/js/datatable/users/users.js' %}?time={% now 'h:i:s' %}"></script>
+
+{% endblock script %}
+    
+    

@@ -1,0 +1,53 @@
+{% load static %}
+
+<!--MAIN HEADER SECTION STARTED-->
+<header>
+    <div class="header-main dFlex">
+        <!-- <div class="logo-wrapper">
+            <a href="#">
+                <img src="{% static 'assets/images/logo.png' %}" alt="Titan Logo">
+            </a>
+        </div> -->
+        <div class="menu-switch">
+            <i class="bi bi-list bi-x open-close-icon"></i>
+        </div>
+        <div class="header-from-wrap">
+            <form>
+                <div class="form-group size-small">
+                    <div class="input-group flex-nowrap">
+                        <input type="text" class="form-control" placeholder="Search" aria-label="Search">
+                        <button class="input-group-text" id="addon-wrapping">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div> 
+        <div class="profile-outer">
+            <a class="profile-menu">
+                <div class="profile-dp">
+                    <img src="{% static 'assets/images/profile-image.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="profile-details">
+                    <span class="profile-name">Administrator Titan</span>
+                    <i class="bi bi-caret-down-fill"></i>
+                </div>
+            </a>
+            <div class="profile-dropdown">
+                <ul class="profile-drop-list">
+                    <li> 
+                        <a href="#">
+                            <span>Change Password</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'authentication:signout' %}">
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- MAIN HEADER SECTION ENDED -->

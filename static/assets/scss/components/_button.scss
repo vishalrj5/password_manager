@@ -1,0 +1,80 @@
+
+
+@import '../base/mixins';
+@import '../base/variables';
+
+.btn-small {
+	padding: 0px 15px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.btn {
+    min-width: 110px;
+	padding: 0px 30px;
+	line-height: 23px;
+    font-size: $baseFontSize - 2px;
+	outline: none;
+	box-shadow: none;
+    border-radius: 2px;
+    transition: 0.3s all ease-in-out;
+	border-width: 1px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	&:hover,
+	&:focus {
+		outline: none;
+		box-shadow: none;
+	}
+	&.btn-primary {
+		background-color: $primaryColor;
+		border: 1px solid $primaryColor;
+		color: $whiteColor;
+		&:hover {
+			background-color: $primaryHoverColor;
+			border: 1px solid $primaryHoverColor;
+		}
+	}
+	&.btn-secondary {
+		background-color: $whiteColor;
+		color: $mainTextColor;
+		border: 1px solid $primaryColor;
+		&:hover {
+			color: $whiteColor;
+			background-color: $primaryColor;
+		}
+	}
+	&.btn-cancel {
+		color: $blackColor;
+		background-color: $whiteColor;
+		border: 1px solid $lightGrey;
+		&:hover {
+			color: $blackColor;
+			background-color: $lightGrey;
+			border: 1px solid $lightGrey;
+		}
+	}
+	&.btn-danger {
+		background-color: $dangerColor;
+		border: 1px solid $dangerColor;
+		color: $whiteColor;
+		&:hover {
+			color: $whiteColor;
+			opacity: .8;
+		}
+	}
+	&:disabled {
+		background-color: $lightGrey;
+		border: 1px solid $lightGrey;
+		cursor: not-allowed;
+	}
+}
+// div {
+// 	.btn {
+// 		&:last-child {
+// 			margin-right: 0px;
+// 		}
+// 	}
+// }

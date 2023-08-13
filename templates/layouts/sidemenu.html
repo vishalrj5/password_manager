@@ -1,0 +1,20 @@
+{% load static %}
+<div class="dasboard-sidebar">
+    <div class="menu-switch-mobile open">
+        <i class="bi bi-list bi-x open-close-icon"></i>
+    </div>
+    <div class="sidebar-container fullWidth">
+        <div class="logo">
+            <a href="#"><img src="{% static 'assets/images/logo.webp' %}" class="img-fluid" alt="Image"></a>
+        </div>
+        <div class="menu">
+            <ul class="menu-list">
+                <li><a href="{% url 'home:dashboard' %}" class=" {% if request.resolver_match.url_name in 'dashboard,' %} active {% endif %} "><img src="{% static 'assets/images/dashboard.png' %}" alt="img-fluid"> Dashboard</a></li>
+                <li><a href="{% url 'users:users.index' %}" class=" {% if request.resolver_match.url_name in 'users.index,users.create,users.update' %} active {% endif %} "><i class="fa fa-users" aria-hidden="true" style="margin-right:15px;"></i> Users</a></li>
+                <li><a href="#"><img src="{% static 'assets/images/switch.png' %}" alt="img-fluid"> Profile</a></li>
+                <li><a href="#"><img src="{% static 'assets/images/switch.png' %}" alt="img-fluid"> Bookings</a></li>
+                <li><a href="#"><img src="{% static 'assets/images/switch.png' %}" alt="img-fluid"> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

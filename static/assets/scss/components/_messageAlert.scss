@@ -1,0 +1,60 @@
+.messageAlert {
+	padding: 15px 20px;
+	color: $textColor;
+	font-size: $baseFontSize - 1px;
+	position: fixed;
+	visibility: none;
+	opacity: 0;
+	width: 100%;
+    border-radius: 5px;
+    width: 40%;
+    top: 100px;
+    z-index: -2;
+    right: 5%;
+    box-shadow: 2px 3px 5px #00000026;
+	-webkit-transition: 2s;
+    -moz-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+    @include mqMx(extraLarge){
+    	width: 50%;
+    }
+    @include mqMx(large){
+    	width: 60%;
+    }
+    @include mqMx(medium){
+    	width: 75%;
+    }
+    @include mqMx(small){
+    	width: 90%;
+    }
+	&.success {
+		color: #155724;
+		background-color: #d4edda;
+    	border: 1px solid #c3e6cb;
+	}
+	&.fail {
+		color: #721c24;
+	    background-color: #f8d7da;
+	    border: 1px solid #f5c6cb;
+	}
+	&.show {
+		visibility: visible;
+		opacity: 1;
+		z-index: 9999;
+		-webkit-transition: 2s;
+	    -moz-transition: 2s;
+	    -o-transition: 2s;
+	    transition: 2s;
+	}
+	p {
+		margin: 0px;
+		display: flex;
+	    justify-content: flex-start;
+	    align-items: center;
+		i {
+			margin-right: 10px;
+			font-size: $baseFontSize + 1px;
+		}
+	}
+}

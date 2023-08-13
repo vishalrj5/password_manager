@@ -1,0 +1,53 @@
+
+
+@import '../base/mixins';
+@import '../base/variables';
+
+.radio{
+    label{
+        position: relative;
+        cursor: pointer;
+        border: 0;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #000;
+        pointer-events: auto;
+        input{
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
+}
+.dot{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #8696a1;
+    position: relative;
+    top: 6px;
+    margin-right: 7px;
+    &:before{
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background: #fff;
+        position: absolute;
+        transform: scale(0) rotate(-45deg);
+        top: 4.5px;
+        left: 5px;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+}
+.radio label input:checked ~ .dot{
+    background-color: #000;
+    border-color: #000;
+}
+.radio label input:checked ~ .dot::before{
+    transform: scale(1) rotate(-45deg);
+}

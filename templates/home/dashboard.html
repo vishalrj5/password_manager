@@ -1,0 +1,632 @@
+{% extends 'layouts/apps.html' %} {% load static %} {% block content %}
+<div class="dashboard-content-container fullWidth">
+  <!-- OVERVIEW CARDS STARTED -->
+  <div class="overview-section fullWidth">
+    <h2 class="heading mb-3">Overview Cards</h2>
+    <h2 class="sub-heading mb-3">Sub Heading</h2>
+    <div class="overview-cards fullWidth">
+      <div class="cards-blocks dFlex">
+        <h2>10 <br /><span>Project Active</span></h2>
+        <img
+          src="{% static 'assets/images/project-activities.png' %}"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+      <div class="cards-blocks dFlex">
+        <h2>2000 <br /><span>Total Entries</span></h2>
+      </div>
+      <div class="cards-blocks dFlex">
+        <h2>10 <br /><span>Verified</span></h2>
+        <img
+          src="{% static 'assets/images/verified-icon.png' %}"
+          alt=""
+          class="img-fluid"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- OVERVIEW CARDS ENDED -->
+  <!-- FORMS STARTS -->
+  <div class="form-section dFlex mb-4 clearfix">
+    <div class="form-row mb-2">
+      <div class="col-12 column-common mandatory-alert">
+        <h6 class="mandatory-msg red-alert">
+          ** Maximum upload file Size: 2 MB
+        </h6>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="col-12 column-common dFlex">
+        <h3>Gender</h3>
+      </div>
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 column-common column-input dFlex"
+      >
+        <label for="" class="label-title">Name</label>
+        <input type="text" placeholder="Name" required />
+        <span class="error-msg">This field is required</span>
+      </div>
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 column-common column-select dFlex"
+      >
+        <label for="" class="label-title">Gender</label>
+        <select name="" id="" required>
+          <option value="">male</option>
+          <option value="">Female</option>
+          <option value="">Others</option>
+        </select>
+        <span class="error-msg">This field is required</span>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 column-common column-select dFlex"
+      >
+        <label for="" class="label-title">Maritial Status</label>
+        <select name="" id="">
+          <option value="">Single</option>
+          <option value="">Married</option>
+          <option value="">Others</option>
+        </select>
+        <span class="error-msg">This field is required</span>
+      </div>
+      <div
+        class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 column-common column-select dFlex"
+      >
+        <label for="" class="label-title">Select Room</label>
+        <select name="" id="">
+          <option value="">male</option>
+          <option value="">Female</option>
+          <option value="">Others</option>
+        </select>
+        <span class="error-msg">This field is required</span>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="col-3 column-common column-radio dFlex">
+        <label for="" class="label-title">Do you want to extent the trip</label>
+        <ul>
+          <li>
+            <input type="radio" id="f-option" name="selector" />
+            <label for="f-option">Yes</label>
+            <div class="check"></div>
+          </li>
+          <li>
+            <input type="radio" id="s-option" name="selector" />
+            <label for="s-option">No</label>
+            <div class="check"><div class="inside"></div></div>
+          </li>
+        </ul>
+        <span class="error-msg">This field is required</span>
+      </div>
+      <div class="col-3 column-common column-datepicker dFlex">
+        <label for="" class="label-title">What is the return date </label>
+        <div class="input-group date" id="datepicker">
+          <input type="text" class="form-control" placeholder="Date" />
+          <span class="input-group-append">
+            <span class="input-group-text bg-white d-block">
+              <img src="{% static 'assets/images/calendar.png' %}" alt="" />
+            </span>
+          </span>
+        </div>
+        <span class="alert-msg"
+          >Note: provide 2nd dose/booster dose certificate</span
+        >
+        <span class="error-msg">This field is required</span>
+        <!-- Link Date Picker CSS & JS -->
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="col-3 column-common">
+        <label
+          for=""
+          class="label-title"
+          data-bs-toggle="tooltip"
+          data-bs-placement="top"
+          title="Tooltip on top"
+          >Tooltip</label
+        >
+      </div>
+    </div>
+
+    <div class="form-row dFlex mb-2">
+      <div class="col-12 column-common column-select dFlex">
+        <label for="" class="label-title">Seat Option</label>
+        <select name="" id="">
+          <option value="">Business</option>
+          <option value="">Economy</option>
+          <option value="">Others</option>
+        </select>
+        <span class="error-msg">This field is required</span>
+      </div>
+      <div class="col-12 column-common column-checkbox dFlex">
+        <label for="" class="label-title">Travelling with Family Members</label>
+        <ul class="unstyled centered">
+          <li>
+            <input
+              class="styled-checkbox"
+              id="styled-checkbox-1"
+              type="checkbox"
+              value="value1"
+              disabled
+            />
+            <label for="styled-checkbox-1">Member 1</label>
+            <div class="checkbox-button wb-pl-15">
+              <button class="btn btn-danger">Delete</button>
+              <button class="btn btn-primary">Edit</button>
+            </div>
+          </li>
+          <li>
+            <input
+              class="styled-checkbox"
+              id="styled-checkbox-2"
+              type="checkbox"
+              value="value2"
+              checked
+            />
+            <label for="styled-checkbox-2">Member 2</label>
+          </li>
+          <li>
+            <input
+              class="styled-checkbox"
+              id="styled-checkbox-4"
+              type="checkbox"
+              value="value4"
+            />
+            <label for="styled-checkbox-4">Member 3</label>
+          </li>
+          <!-- <li>
+                      <input class="styled-checkbox" id="styled-checkbox-3" type="checkbox" value="value3" disabled>
+                      <label for="styled-checkbox-3">A disabled checkbox</label>
+                    </li> -->
+        </ul>
+        <span class="error-msg">This field is required</span>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div
+        class="col-3 column-common column-uploads column-drop drop-type-2 dFlex"
+      >
+        <label for="" class="label-title">Uploaded Files</label>
+        <div class="uploaded-file dFlex">
+          <div class="uploaded-img dFlex">
+            <img
+              src="{% static 'assets/images/file-upload.png' %}"
+              alt="Titan"
+              class="img-fluid"
+            />
+            <a href="#" class="download">Download</a>
+            <a href="#" class="close">Remove</a>
+          </div>
+        </div>
+        <div class="fullWidth d-none">
+          <form class="form">
+            <div class="file-upload-wrapper" data-text="Select your file!">
+              <input
+                name="file-upload-field"
+                type="file"
+                class="file-upload-field"
+                value=""
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="col-5 column-common column-textarea">
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Message"
+        ></textarea>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="col-5 column-common column-drop">
+        <div class="drop-zone">
+          <span class="drop-zone__prompt"
+            >Drop file here or click to upload</span
+          >
+          <input type="file" name="myFile" class="drop-zone__input" />
+        </div>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="col-5 column-common column-drop drop-type-3">
+        <div class="upload__box">
+          <div class="upload__btn-box">
+            <label class="upload__btn">
+              <p>Drop file here or click to upload</p>
+              <span>You can upload maximum of 100 files </span>
+              <input
+                type="file"
+                multiple=""
+                data-max_length="20"
+                class="upload__inputfile"
+              />
+            </label>
+          </div>
+          <div class="upload__img-wrap"></div>
+        </div>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="col-5 column-common column-drop drop-type-2">
+        <form class="form">
+          <div class="file-upload-wrapper" data-text="Select your file!">
+            <input
+              name="file-upload-field"
+              type="file"
+              class="file-upload-field"
+              value=""
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="row-common column-button fullWidth dFlex">
+        <button class="btn btn-secondary">Edit</button>
+        <button class="btn btn-cancel">Cancel</button>
+        <button class="btn btn-primary">Save</button>
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="row-common column-button fullWidth dFlex">
+        <input type="submit" value="Cancel" class="btn btn-cancel" />
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <input type="submit" value="Submit" class="btn btn-primary" />
+      </div>
+    </div>
+    <div class="form-row dFlex mb-2">
+      <div class="row-common column-button fullWidth dFlex">
+        <a href="#" class="btn btn-secondary">View</a>
+        <a href="#" class="btn btn-primary">Submit</a>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+    <div class="form-row dFlex mb-2">
+      <div class="row-common column-button fullWidth dFlex">
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Modal
+        </button>
+      </div>
+    </div>
+  </div>
+  <!-- FORMS ENDS -->
+  <!-- PROGRESS BAR SECTION STARTED -->
+  <div class="progressbar-section fullWidth mb-5">
+    <div class="progress">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        style="width: 25%"
+        aria-valuenow="25"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+        25%
+      </div>
+    </div>
+  </div>
+  <!-- PROGRESS BAR SECTION ENDED -->
+  <div class="user-info-block fullWidth">
+    <!-- ENTRIES BLOCK STARTED -->
+    <div class="user-recent-entries fullWidth">
+      <h2 class="heading mb-4">Forms</h2>
+      <h2 class="heading button-heading mt-1 mb-4">
+        <span>Entries</span>
+        <a href="#" class="link btn btn-primary">Fill Now</a>
+      </h2>
+      <div class="recent-entries-wrap">
+        <div class="recent-entries-list dFlex">
+          <div class="entries-data dFlex">
+            <span class="user-img-wrap">
+              <img
+                src="{% static 'assets/images/user.png' %}"
+                alt="User Image"
+                class="img-fluid"
+              />
+            </span>
+            <div class="recent-content dFlex dColomn isColomnJcCenter">
+              <h3>Rohit</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                nisi distinctio, fugiat, corrupti sapiente exercit.
+              </p>
+            </div>
+          </div>
+          <div class="options-wrap dFlex">
+            <button class="btn btn-secondary">Edit</button>
+            <button class="btn btn-primary">View</button>
+            <button class="btn btn-cancel">Cancel</button>
+          </div>
+        </div>
+
+        <div class="recent-entries-list dFlex">
+          <div class="entries-data dFlex">
+            <span class="user-img-wrap">
+              <img
+                src="{% static 'assets/images/user.png' %}"
+                alt="User Image"
+                class="img-fluid"
+              />
+            </span>
+            <div class="recent-content dFlex dColomn isColomnJcCenter">
+              <h3>Rohit</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                nisi distinctio, fugiat, corrupti sapiente exercit.
+              </p>
+            </div>
+          </div>
+          <div class="options-wrap dFlex">
+            <button class="btn btn-secondary">Edit</button>
+            <button class="btn btn-primary">View</button>
+            <button class="btn btn-cancel">Cancel</button>
+          </div>
+        </div>
+
+        <div class="recent-entries-list dFlex">
+          <div class="entries-data dFlex">
+            <span class="user-img-wrap">
+              <img
+                src="{% static 'assets/images/user.png' %}"
+                alt="User Image"
+                class="img-fluid"
+              />
+            </span>
+            <div class="recent-content dFlex dColomn isColomnJcCenter">
+              <h3>Rohit</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                nisi distinctio, fugiat, corrupti sapiente exercit.
+              </p>
+            </div>
+          </div>
+          <div class="options-wrap dFlex">
+            <button class="btn btn-secondary">Edit</button>
+            <button class="btn btn-primary">View</button>
+            <button class="btn btn-danger">Remove</button>
+          </div>
+        </div>
+
+        <div class="recent-entries-list dFlex">
+          <div class="entries-data dFlex">
+            <span class="user-img-wrap">
+              <img
+                src="{% static 'assets/images/user.png' %}"
+                alt="User Image"
+                class="img-fluid"
+              />
+            </span>
+            <div class="recent-content dFlex dColomn isColomnJcCenter">
+              <h3>Rohit</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+                nisi distinctio, fugiat, corrupti sapiente exercit.
+              </p>
+            </div>
+          </div>
+          <div class="options-wrap dFlex">
+            <button class="btn btn-secondary" disabled>Edit</button>
+            <button class="btn btn-primary">View</button>
+            <button class="btn btn-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ENTRIES BLOCK ENDED -->
+  </div>
+  <!-- TABLE STARTED -->
+  <div class="recent-order-section fullWidth">
+    <h2 class="heading mt-5 mb-3">Table Borderless</h2>
+    <div class="recent-table table-borderless table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Name</th>
+            <th scope="col">ID</th>
+            <th scope="col">Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="column-checkbox">
+                <ul>
+                  <li>
+                    <input
+                      class="styled-checkbox"
+                      id="styled-checkbox-1"
+                      type="checkbox"
+                      value="value1"
+                    />
+                    <label for="styled-checkbox-1"></label>
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>Mark</td>
+            <td>EMP-1001</td>
+            <td>04 Sep 2020</td>
+            <td><span class="status green">Verified</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary">Edit</a>
+              <a href="#" class="btn btn-primary">View</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="column-checkbox">
+                <ul>
+                  <li>
+                    <input
+                      class="styled-checkbox"
+                      id="styled-checkbox-2"
+                      type="checkbox"
+                      value="value1"
+                    />
+                    <label for="styled-checkbox-2"></label>
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>Mark</td>
+            <td>EMP-1001</td>
+            <td>04 Sep 2020</td>
+            <td><span class="status green">Verified</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary">Edit</a>
+              <a href="#" class="btn btn-primary">View</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="column-checkbox">
+                <ul>
+                  <li>
+                    <input
+                      class="styled-checkbox"
+                      id="styled-checkbox-3"
+                      type="checkbox"
+                      value="value1"
+                    />
+                    <label for="styled-checkbox-3"></label>
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>Mark</td>
+            <td>EMP-1001</td>
+            <td>04 Sep 2020</td>
+            <td><span class="status red">Pending</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary">Edit</a>
+              <a href="#" class="btn btn-primary">View</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="column-checkbox">
+                <ul>
+                  <li>
+                    <input
+                      class="styled-checkbox"
+                      id="styled-checkbox-4"
+                      type="checkbox"
+                      value="value1"
+                    />
+                    <label for="styled-checkbox-4"></label>
+                  </li>
+                </ul>
+              </div>
+            </td>
+            <td>Mark</td>
+            <td>EMP-1001</td>
+            <td>04 Sep 2020</td>
+            <td><span class="status green">Verified</span></td>
+            <td>
+              <a href="#" class="btn btn-secondary">Edit</a>
+              <a href="#" class="btn btn-primary">View</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- TABLE ENDED -->
+  <!-- ACCORDION STARTED -->
+  <div class="accordion-section fullWidth">
+    <h2 class="heading mt-5 mb-3">Accordion</h2>
+    <div class="accordion fullWidth" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            <span>1</span> Current Address
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse show"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <div class="current-address-area fullWidth">
+              <p>
+                <span>Jessica Jonathan</span>, Pullepady Road, Cochin,
+                Ernakulam, Pincode : 680309, Kerala.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="false"
+            aria-controls="collapseTwo"
+          >
+            <span>2</span> Change Address
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body"></div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="false"
+            aria-controls="collapseThree"
+          >
+            <span>3</span> Order Summary
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ACCORDION ENDED -->
+</div>
+
+{% endblock content %}
